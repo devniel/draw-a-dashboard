@@ -1,0 +1,7 @@
+"use client";
+import dynamic from "next/dynamic";
+{IMPORTS}
+
+export default function Page() {
+  return <>{COMPONENTS}</>;
+}
