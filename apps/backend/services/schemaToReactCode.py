@@ -7,7 +7,7 @@ from constants import HEADERS
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def schemaToReactCode(component_name, component_properties):
+def schemaToReactCode(component_name, component_properties, component_bounding_box):
     logger.info(f'Extracted component schema for {component_name}: {component_properties}')
 
     prompt = f"""
@@ -19,6 +19,12 @@ def schemaToReactCode(component_name, component_properties):
                 imports: <imports required for the component, should be a string> 
             }} 
         }}
+
+        Others rule to apply:
+        - Use the bounding box {component_bounding_box} to add inline styles in order to
+          make the component floating.
+        - Don't use @mui/styles as it's legacy.
+        - Don't add wrappers to the components.
         
         Convert the following {component_name} component schema to Material-UI React code,
         return the component code without wrappers and required imports separately:

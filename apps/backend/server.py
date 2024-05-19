@@ -35,7 +35,7 @@ def to_dashboard():
         material_ui_components = ""
 
         for component in components:
-            component_data = schemaToReactCode(component["type"], component["properties"])
+            component_data = schemaToReactCode(component["type"], component["properties"], component["bounding_box"])
             material_ui_imports += component_data["imports"] + "\n\n"
             material_ui_components += component_data["code"] + "\n\n"
 

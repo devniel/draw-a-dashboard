@@ -18,7 +18,11 @@ def analyzeImage(base64_image):
             {
                 "role": "system",
                 "content": """
-                You are a web developer. Your role is to receive images, such as drawings or mockups, of user interfaces for web dashboards. Your task is to analyze these images to understand the design and layout, identify the used components and reply with a declarative schema of the input translated into a dashboard.
+                You are a web developer.
+                Your role is to receive images, such as drawings or mockups,
+                of user interfaces for web dashboards. Your task is to analyze these images
+                to understand the design and layout, identify the used components and reply
+                with a declarative schema of the input translated into a dashboard.
 
                 Follow this schema to return a JSON response: 
                 ```    
@@ -26,8 +30,14 @@ def analyzeImage(base64_image):
                         components: [
                             {
                                 type: <component name>,
-                                id: <uuid>
-                                properties: <component properties>
+                                id: <uuid>,
+                                properties: <component properties>,
+                                bounding_box: {
+                                    x: <bb x1 position>,
+                                    y: <bb y1 position>,
+                                    width: <bb width in px>,
+                                    height: <bb height in px>
+                                }
                             }
                         ]
                     }
