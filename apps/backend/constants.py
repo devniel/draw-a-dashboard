@@ -9,8 +9,8 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # Path to the Next.js renderer file
-RENDERER_FILE_PATH = '/Users/devniel/workspace/dev/draw-a-dashboard/apps/renderer/app/page.tsx'
-RENDERER_TEMPLATE_FILE_PATH = '/Users/devniel/workspace/dev/draw-a-dashboard/apps/renderer/app/page.tsx.template'
+RENDERER_FILE_PATH = os.getenv('RENDERER_FILE_PATH')
+RENDERER_TEMPLATE_FILE_PATH = os.getenv('RENDERER_TEMPLATE_FILE_PATH')
 PORT_BACKEND = int(os.getenv('PORT_BACKEND', 5000))
 
 # OpenAI API Headers
